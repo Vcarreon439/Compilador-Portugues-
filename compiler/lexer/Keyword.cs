@@ -14,9 +14,9 @@
             "float",
             "real", // double
             "texto",
-            // conversão de tipo
+            // conversión de tipo
             "cast",
-            // declarações
+            // declaraciones
             "var",
             "função",
             "externa",
@@ -24,23 +24,23 @@
             "programa",
             "unidade",
             "usando",
-            // leitura e escrita
-            "leia",
-            "escreva",
-            "escrevaln",
+            // Lectura y escritura
+            "leer",
+            "escribir",
+            "escribirln",
             // literais lógicos
-            "verdade", // true
+            "verdad", // true
             "falso", // false
             // literal nulo
             "nulo", // null
             // estruturas de controle de fluxo
-            "se", // if
-            "senão", // else
-            "enquanto", // while
+            "si", // if
+            "sino", // else
+            "mientras", // while
             "para", // for
-            "repita", // do
-            "retorne", // return
-            "quebra" // break
+            "haga", // do
+            "retorna", // return
+            "detener" // break
         };
 
         public static bool IsKeyword(string s)
