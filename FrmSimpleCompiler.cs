@@ -844,7 +844,7 @@ namespace SimpleCompiler
         {
             if (interval.IsValid())
             {
-                ConsolePrintLn("Erro de compilação na linha " + interval.Line + ": " + message);
+                ConsolePrintLn("Error de compilación en la línea " + interval.Line + ": " + message);
 
                 if (interval.FileName != null && interval.Start >= 0)
                 {
@@ -857,7 +857,7 @@ namespace SimpleCompiler
                 }
             }
             else
-                ConsolePrintLn("Erro de compilação: " + message);
+                ConsolePrintLn("Error de compilación:" + message);
         });
 
         private void DisassemblyLine(int ip, string line)
