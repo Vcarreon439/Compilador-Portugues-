@@ -776,7 +776,7 @@ namespace compiler.lexer
                 PreviusToken();
 
                 return throwException
-                    ? throw new CompilerException(token.Interval, errorMessage ?? "Palavra reservada esperada mas " + token + " encontrado.")
+                    ? throw new CompilerException(token.Interval, errorMessage ?? "Palabra reservada esperada pero " + token + " encontrado.")
                     : null;
             }
 
