@@ -12,14 +12,14 @@ namespace compiler
         {
             Token token = lexer.NextToken();
             if (token == null)
-                throw new CompilerException(lexer.CurrentInterval(lexer.CurrentPos), "Fim do arquivo encontrado mas token esperado.");
+                throw new CompilerException(lexer.CurrentInterval(lexer.CurrentPos), "Se encontró el final del archivo pero se esperaba el token.");
 
             switch (token)
             {
                 case Keyword kw:
                     switch (kw.Value)
                     {
-                        case "verdade":
+                        case "verdad":
                             return new BoolLiteralExpression(kw.Interval, true);
 
                         case "falso":
@@ -92,7 +92,7 @@ namespace compiler
                 }
             }
 
-            throw new CompilerException(token.Interval, "Token não esperado: " + token);
+            throw new CompilerException(token.Interval, "Token inesperado: " + token);
         }
 
         private Expression ParsePostFixExpression()
@@ -120,7 +120,7 @@ namespace compiler
                 case "[":
                 {
                     if (lexer.NextSymbol("]", false) != null)
-                        throw new CompilerException(operand.Interval, "Índice de array esperado.");
+                        throw new CompilerException(operand.Interval, "Índice de matriz esperado.");
 
                     ArrayAccessorExpression result = new(SourceInterval.Merge(operand.Interval, symbol.Interval), operand);
                     Expression indexer = ParseExpression();
@@ -566,7 +566,7 @@ namespace compiler
                 if (lexer.NextSymbol("[", false) != null)
                 {
                     if (PrimitiveType.IsPrimitiveVoid(result))
-                        throw new CompilerException(kw.Interval, "Não é possível criar um array do tipo void.");
+                        throw new CompilerException(kw.Interval, "No es posible crear una matriz de tipo void.");
 
                     if (lexer.NextSymbol("]", false) != null)
                         result = new PointerType(result, true);
