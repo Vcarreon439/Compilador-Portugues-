@@ -60,7 +60,7 @@ namespace compiler
                 return;
             }
 
-            throw new CompilerException(interval, "Tipo desconhecido: '" + type + "'.");
+            throw new CompilerException(interval, "Tipo desconocido: '" + type + "'.");
         }
 
 #pragma warning disable IDE0060 // Remover o parâmetro não utilizado
@@ -111,7 +111,7 @@ namespace compiler
                 return;
             }
 
-            throw new CompilerException(interval, "Tipo desconhecido: '" + type + "'.");
+            throw new CompilerException(interval, "Tipo desconocido: '" + type + "'.");
         }
 
         private void CompileStoreGlobal(Assembler assembler, Assembler leftAssembler, AbstractType type, int offset, SourceInterval interval)
@@ -157,7 +157,7 @@ namespace compiler
                 return;
             }
 
-            throw new CompilerException(interval, "Tipo desconhecido: '" + type + "'.");
+            throw new CompilerException(interval, "Tipo desconocido: '" + type + "'.");
         }
 
         private void CompileStoreLocal(Assembler assembler, Assembler leftAssembler, AbstractType type, int offset, SourceInterval interval)
@@ -197,13 +197,13 @@ namespace compiler
             if (type is StringType)
             {
                 leftAssembler.EmitLoadLocalHostAddress(offset);
-                Function f = unitySystem.FindFunction("AtribuiTexto");
+                Function f = unitySystem.FindFunction("AsignarTexto");
                 int index = GetOrAddExternalFunction(f.Name, f.ParameterSize);
                 assembler.EmitExternCall(index);
                 return;
             }
 
-            throw new CompilerException(interval, "Tipo desconhecido: '" + type + "'.");
+            throw new CompilerException(interval, "Tipo desconocido: '" + type + "'.");
         }
 
         private void CompileStore(Assembler assembler, Assembler leftAssembler, Variable storeVar, SourceInterval interval)
@@ -259,7 +259,7 @@ namespace compiler
                 return;
             }
 
-            throw new CompilerException(interval, "Operação inválida para o tipo '" + type + "'.");
+            throw new CompilerException(interval, "Operación no válida para el tipo '" + type + "'.");
         }
 
         private void CompileStorePointerAdd(Assembler assembler, AbstractType type, SourceInterval interval)
@@ -307,7 +307,7 @@ namespace compiler
                 return;
             }
 
-            throw new CompilerException(interval, "Operação inválida para o tipo '" + type + "'.");
+            throw new CompilerException(interval, "Operación no válida para el tipo '" + type + "'.");
         }
 
         private void CompileStoreAdd(Assembler assembler, Variable storeVar, SourceInterval interval)
@@ -391,7 +391,7 @@ namespace compiler
                 return;
             }
 
-            throw new CompilerException(interval, "Operação inválida para o tipo '" + type + "'.");
+            throw new CompilerException(interval, "Operación no válida para el tipo '" + type + "'.");
         }
 
         private void CompileStoreStackSub(Assembler assembler, AbstractType type, SourceInterval interval)
@@ -439,7 +439,7 @@ namespace compiler
                 return;
             }
 
-            throw new CompilerException(interval, "Operação inválida para o tipo '" + type + "'.");
+            throw new CompilerException(interval, "Operación no válida para el tipo '" + type + "'.");
         }
 
         private void CompileStorePointerSub(Assembler assembler, AbstractType type, SourceInterval interval)
@@ -487,7 +487,7 @@ namespace compiler
                 return;
             }
 
-            throw new CompilerException(interval, "Operação inválida para o tipo '" + type + "'.");
+            throw new CompilerException(interval, "Operación no válida para el tipo '" + type + "'.");
         }
 
         private void CompileStoreSub(Assembler assembler, Variable storeVar, SourceInterval interval)
@@ -571,7 +571,7 @@ namespace compiler
                 return;
             }
 
-            throw new CompilerException(interval, "Operação inválida para o tipo '" + type + "'.");
+            throw new CompilerException(interval, "Operación no válida para el tipo '" + type + "'.");
         }
 
         private void CompileStoreStackMul(Assembler assembler, AbstractType type, SourceInterval interval)
@@ -612,7 +612,7 @@ namespace compiler
                 }
             }
 
-            throw new CompilerException(interval, "Operação inválida para o tipo '" + type + "'.");
+            throw new CompilerException(interval, "Operación no válida para el tipo '" + type + "'.");
         }
 
         private void CompileStorePointerMul(Assembler assembler, AbstractType type, SourceInterval interval)
@@ -653,7 +653,7 @@ namespace compiler
                 }
             }
 
-            throw new CompilerException(interval, "Operação inválida para o tipo '" + type + "'.");
+            throw new CompilerException(interval, "Operación no válida para el tipo '" + type + "'.");
         }
 
         private void CompileStoreMul(Assembler assembler, Variable storeVar, SourceInterval interval)
@@ -725,7 +725,7 @@ namespace compiler
                 }
             }
 
-            throw new CompilerException(interval, "Operação inválida para o tipo '" + type + "'.");
+            throw new CompilerException(interval, "Operación no válida para el tipo '" + type + "'.");
         }
 
         private void CompileStoreStackDiv(Assembler assembler, AbstractType type, SourceInterval interval)
@@ -766,7 +766,7 @@ namespace compiler
                 }
             }
 
-            throw new CompilerException(interval, "Operação inválida para o tipo '" + type + "'.");
+            throw new CompilerException(interval, "Operación no válida para el tipo '" + type + "'.");
         }
 
         private void CompileStorePointerDiv(Assembler assembler, AbstractType type, SourceInterval interval)
@@ -807,7 +807,7 @@ namespace compiler
                 }
             }
 
-            throw new CompilerException(interval, "Operação inválida para o tipo '" + type + "'.");
+            throw new CompilerException(interval, "Operación no válida para el tipo '" + type + "'.");
         }
 
         private void CompileStoreDiv(Assembler assembler, Variable storeVar, SourceInterval interval)
@@ -878,7 +878,7 @@ namespace compiler
                 }
             }
 
-            throw new CompilerException(interval, "Operação inválida para o tipo '" + type + "'.");
+            throw new CompilerException(interval, "Operación no válida para el tipo '" + type + "'.");
         }
 
         private void CompileStoreStackMod(Assembler assembler, AbstractType type, SourceInterval interval)
@@ -909,7 +909,7 @@ namespace compiler
                 }
             }
 
-            throw new CompilerException(interval, "Operação inválida para o tipo '" + type + "'.");
+            throw new CompilerException(interval, "Operación no válida para el tipo '" + type + "'.");
         }
 
         private void CompileStorePointerMod(Assembler assembler, AbstractType type, SourceInterval interval)
@@ -940,7 +940,7 @@ namespace compiler
                 }
             }
 
-            throw new CompilerException(interval, "Operação inválida para o tipo '" + type + "'.");
+            throw new CompilerException(interval, "Operación no válida para el tipo '" + type + "'.");
         }
 
         private void CompileStoreMod(Assembler assembler, Variable storeVar, SourceInterval interval)
@@ -992,7 +992,7 @@ namespace compiler
                 }
             }
 
-            throw new CompilerException(interval, "Operação inválida para o tipo '" + type + "'.");
+            throw new CompilerException(interval, "Operación no válida para el tipo '" + type + "'.");
         }
 
         private void CompileStoreStackAnd(Assembler assembler, AbstractType type, SourceInterval interval)
@@ -1024,7 +1024,7 @@ namespace compiler
                 }
             }
 
-            throw new CompilerException(interval, "Operação inválida para o tipo '" + type + "'.");
+            throw new CompilerException(interval, "Operación no válida para el tipo '" + type + "'.");
         }
 
         private void CompileStorePointerAnd(Assembler assembler, AbstractType type, SourceInterval interval)
@@ -1056,7 +1056,7 @@ namespace compiler
                 }
             }
 
-            throw new CompilerException(interval, "Operação inválida para o tipo '" + type + "'.");
+            throw new CompilerException(interval, "Operación no válida para el tipo '" + type + "'.");
         }
 
         private void CompileStoreAnd(Assembler assembler, Variable storeVar, SourceInterval interval)
@@ -1109,7 +1109,7 @@ namespace compiler
                 }
             }
 
-            throw new CompilerException(interval, "Operação inválida para o tipo '" + type + "'.");
+            throw new CompilerException(interval, "Operación no válida para el tipo '" + type + "'.");
         }
 
         private void CompileStoreStackOr(Assembler assembler, AbstractType type, SourceInterval interval)
@@ -1141,7 +1141,7 @@ namespace compiler
                 }
             }
 
-            throw new CompilerException(interval, "Operação inválida para o tipo '" + type + "'.");
+            throw new CompilerException(interval, "Operación no válida para el tipo '" + type + "'.");
         }
 
         private void CompileStorePointerOr(Assembler assembler, AbstractType type, SourceInterval interval)
@@ -1173,7 +1173,7 @@ namespace compiler
                 }
             }
 
-            throw new CompilerException(interval, "Operação inválida para o tipo '" + type + "'.");
+            throw new CompilerException(interval, "Operación no válida para el tipo '" + type + "'.");
         }
 
         private void CompileStoreOr(Assembler assembler, Variable storeVar, SourceInterval interval)
@@ -1226,7 +1226,7 @@ namespace compiler
                 }
             }
 
-            throw new CompilerException(interval, "Operação inválida para o tipo '" + type + "'.");
+            throw new CompilerException(interval, "Operación no válida para el tipo '" + type + "'.");
         }
 
         private void CompileStoreStackXor(Assembler assembler, AbstractType type, SourceInterval interval)
@@ -1258,7 +1258,7 @@ namespace compiler
                 }
             }
 
-            throw new CompilerException(interval, "Operação inválida para o tipo '" + type + "'.");
+            throw new CompilerException(interval, "Operación no válida para el tipo '" + type + "'.");
         }
 
         private void CompileStorePointerXor(Assembler assembler, AbstractType type, SourceInterval interval)
@@ -1290,7 +1290,7 @@ namespace compiler
                 }
             }
 
-            throw new CompilerException(interval, "Operação inválida para o tipo '" + type + "'.");
+            throw new CompilerException(interval, "Operación no válida para el tipo '" + type + "'.");
         }
 
         private void CompileStoreXor(Assembler assembler, Variable storeVar, SourceInterval interval)
@@ -1342,7 +1342,7 @@ namespace compiler
                 }
             }
 
-            throw new CompilerException(interval, "Operação inválida para o tipo '" + type + "'.");
+            throw new CompilerException(interval, "Operación no válida para el tipo '" + type + "'.");
         }
 
         private void CompileStoreStackShiftLeft(Assembler assembler, AbstractType type, SourceInterval interval)
@@ -1373,7 +1373,7 @@ namespace compiler
                 }
             }
 
-            throw new CompilerException(interval, "Operação inválida para o tipo '" + type + "'.");
+            throw new CompilerException(interval, "Operación no válida para el tipo '" + type + "'.");
         }
 
         private void CompileStorePointerShiftLeft(Assembler assembler, AbstractType type, SourceInterval interval)
@@ -1404,7 +1404,7 @@ namespace compiler
                 }
             }
 
-            throw new CompilerException(interval, "Operação inválida para o tipo '" + type + "'.");
+            throw new CompilerException(interval, "Operación no válida para el tipo '" + type + "'.");
         }
 
         private void CompileStoreShiftLeft(Assembler assembler, Variable storeVar, SourceInterval interval)
@@ -1456,7 +1456,7 @@ namespace compiler
                 }
             }
 
-            throw new CompilerException(interval, "Operação inválida para o tipo '" + type + "'.");
+            throw new CompilerException(interval, "Operación no válida para el tipo '" + type + "'.");
         }
 
         private void CompileStoreStackShiftRight(Assembler assembler, AbstractType type, SourceInterval interval)
@@ -1487,7 +1487,7 @@ namespace compiler
                 }
             }
 
-            throw new CompilerException(interval, "Operação inválida para o tipo '" + type + "'.");
+            throw new CompilerException(interval, "Operación no válida para el tipo '" + type + "'.");
         }
 
         private void CompileStorePointerShiftRight(Assembler assembler, AbstractType type, SourceInterval interval)
@@ -1518,7 +1518,7 @@ namespace compiler
                 }
             }
 
-            throw new CompilerException(interval, "Operação inválida para o tipo '" + type + "'.");
+            throw new CompilerException(interval, "Operación no válida para el tipo '" + type + "'.");
         }
 
         private void CompileStoreShiftRight(Assembler assembler, Variable storeVar, SourceInterval interval)
@@ -1570,7 +1570,7 @@ namespace compiler
                 }
             }
 
-            throw new CompilerException(interval, "Operação inválida para o tipo '" + type + "'.");
+            throw new CompilerException(interval, "Operación no válida para el tipo '" + type + "'.");
         }
 
         private void CompileStoreStackUnsignedShiftRight(Assembler assembler, AbstractType type, SourceInterval interval)
@@ -1601,7 +1601,7 @@ namespace compiler
                 }
             }
 
-            throw new CompilerException(interval, "Operação inválida para o tipo '" + type + "'.");
+            throw new CompilerException(interval, "Operación no válida para el tipo '" + type + "'.");
         }
 
         private void CompileStorePointerUnsignedShiftRight(Assembler assembler, AbstractType type, SourceInterval interval)
@@ -1632,7 +1632,7 @@ namespace compiler
                 }
             }
 
-            throw new CompilerException(interval, "Operação inválida para o tipo '" + type + "'.");
+            throw new CompilerException(interval, "Operación no válida para el tipo '" + type + "'.");
         }
 
         private void CompileStoreUnsignedShiftRight(Assembler assembler, Variable storeVar, SourceInterval interval)
@@ -1684,7 +1684,7 @@ namespace compiler
                 }
             }
 
-            throw new CompilerException(interval, "Operação inválida para o tipo '" + type + "'.");
+            throw new CompilerException(interval, "Operación no válida para el tipo '" + type + "'.");
         }
     }
 }
